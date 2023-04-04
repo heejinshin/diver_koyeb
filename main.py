@@ -60,7 +60,7 @@ def read_root():
 
 @app.get("/response")
 def trigger_post_request(request: Request):
-    url = "provincial-malia-heejinshin.koyeb.app/response"  # replace with the actual URL of your FastAPI server
+    url = "team-diver.com/response"  # replace with the actual URL of your FastAPI server
     headers = {"Content-Type": "application/json"}
     response = requests.post(url, json=request.json(), headers=headers)
     return response.json()
