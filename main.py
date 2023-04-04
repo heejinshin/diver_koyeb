@@ -52,9 +52,18 @@ headers = {
     "Content-Type": "application/json"
 }
 
+
+
 @app.get("/")
 def read_root():
     return {"message": "Hello from Koyeb"}
+
+@app.get("/response")
+def trigger_post_request(request: Request):
+    url = "provincial-malia-heejinshin.koyeb.app/response"  # replace with the actual URL of your FastAPI server
+    headers = {"Content-Type": "application/json"}
+    response = requests.post(url, json=request.json(), headers=headers)
+    return response.json()
 
 @app.post("/response")  
 def image_to_image(request: Request): 
